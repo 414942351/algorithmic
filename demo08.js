@@ -5,6 +5,8 @@ function Dictionary() {
 	this.find = find;
 	this.remove = remove;
 	this.showAll = showAll;
+	this.count = count;
+	this.clear = clear;
 }
 function add(key, value) {
 	this.dataStore[key] = value;
@@ -20,6 +22,20 @@ function showAll() {
 		console.log(key + ': ' + this.dataStore[key]);
 	}
 }
+function count() {
+	var n = 0;
+	for(var key in this.dataStore) {
+		++n;
+	}
+	return n;
+}
+function clear() {
+	for(var key in this.dataStore) {
+		delete this.dataStore[key];
+	}
+}
+
+//test
 var pbook = new Dictionary(); 
 pbook.add("Mike","123");
 pbook.add("David", "345");
