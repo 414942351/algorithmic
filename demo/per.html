@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		var str = 'abcd'
+		function diantumianshiti(str) {
+			var arr = str.split('');
+			var len = arr.length;
+			var ret = [];
+			ret.push(arr[0].toUpperCase());
+			for(var i = 1; i < len; i++) {
+				var temp = arr[i].toUpperCase();
+				for(var j = 1; j < len; j++) {
+					temp += arr[i];
+					if(i === j) {
+						ret.push(temp);
+					}
+				}
+			}
+			return ret.join('-');
+		}
+		console.log(diantumianshiti(str)); //A-Bb-Ccc-Dddd
+	</script>
+</body>
+</html>
